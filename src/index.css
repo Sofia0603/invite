@@ -12,6 +12,13 @@
     font-display: swap;
     src: url("/fonts/Ballet.ttf") format("woff2");
 }
+@font-face {
+    font-family: CafeParis;
+    font-style: normal;
+    font-weight: 250;
+    font-display: swap;
+    src: url("/fonts/CafeParis.ttf") format("woff2");
+}
 
 @import "tailwindcss";
 
@@ -20,6 +27,7 @@
 @theme {
     --font-actay: "Actay", sans-serif;
     --font-ballet: "Ballet", sans-serif;
+    --font-cafeparis: "CafeParis", sans-serif;
 
     --color-primary: #820F1C;
     --color-primary-dark: #62020D;
