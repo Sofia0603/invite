@@ -1,10 +1,11 @@
-import './App.css'
+import Hero from "./components/Hero/Hero.jsx";
+
 
 function App() {
 
   return (
     <>
-     <h1 className="fill-teal-400"> Hello</h1>
+     < Hero/>
     </>
   )
 }

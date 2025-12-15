@@ -1,1 +1,38 @@
+@font-face {
+    font-family: Actay;
+    font-style: normal;
+    font-weight: 250;
+    font-display: swap;
+    src: url("/fonts/ActayCondensed-Thin.otf") format("woff2");
+}
+@font-face {
+    font-family: Ballet;
+    font-style: normal;
+    font-weight: 250;
+    font-display: swap;
+    src: url("/fonts/Ballet.ttf") format("woff2");
+}
+
 @import "tailwindcss";
+
+
+
+@theme {
+    --font-actay: "Actay", sans-serif;
+    --font-ballet: "Ballet", sans-serif;
+
+    --color-primary: #820F1C;
+    --color-primary-dark: #62020D;
+
+    --color-black: #000000;
+
+    --color-bg-light: #E0CCCE;
+    --color-bg-extra-light: #F4E5E6;
+}
+
+body{
+    color: var(--color-black);
+    font-size: 16px;
+    text-align: center;
+}
+
