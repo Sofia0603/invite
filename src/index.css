@@ -1,23 +1,44 @@
 @font-face {
-    font-family: Actay;
+    font-family: "Actay";
     font-style: normal;
-    font-weight: 250;
+    font-weight: 300;
     font-display: swap;
-    src: url("/fonts/ActayCondensed-Thin.otf") format("woff2");
+    src: url("/fonts/ActayCondensed-Thin.otf") format("opentype");
 }
 @font-face {
-    font-family: Ballet;
+    font-family: "Ballet";
     font-style: normal;
     font-weight: 250;
     font-display: swap;
-    src: url("/fonts/Ballet.ttf") format("woff2");
+    src: url("/fonts/Ballet.ttf") format("truetype");
 }
 @font-face {
-    font-family: CafeParis;
+    font-family: "CafeParis";
     font-style: normal;
     font-weight: 250;
     font-display: swap;
-    src: url("/fonts/CafeParis.ttf") format("woff2");
+    src: url("/fonts/CafeParis.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Mirra";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Mirra.otf") format("opentype");
+}
+@font-face {
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight:400;
+    font-display: swap;
+    src: url("/fonts/Merriweathern.ttf") format("truetype");
+}
+@font-face {
+    font-family: "FreakShow";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Freak-Show.ttf") format("truetype");
 }
 
 @import "tailwindcss";
@@ -28,6 +49,9 @@
     --font-actay: "Actay", sans-serif;
     --font-ballet: "Ballet", sans-serif;
     --font-cafeparis: "CafeParis", sans-serif;
+    --font-mirra: "Mirra", sans-serif;
+    --font-merriweather: "Merriweather", sans-serif;
+    --font-freakshow: "FreakShow", sans-serif;
 
     --color-primary: #820F1C;
     --color-primary-dark: #62020D;
@@ -36,11 +60,13 @@
 
     --color-bg-light: #E0CCCE;
     --color-bg-extra-light: #F4E5E6;
+    --color-bg-pink-light: rgba(98, 2, 13, 0.2);
 }
 
 body{
     color: var(--color-black);
     font-size: 16px;
     text-align: center;
+
 }
 
