@@ -5,6 +5,9 @@ import 'aos/dist/aos.css';
 import CountDate from "./components/CountDate/CountDate.jsx";
 import Welcome from "./components/Welcome/Welcome.jsx";
 import Ceremony from "./components/Ceremony/Ceremony.jsx";
+import Banquet from "./components/Banquet/Banquet.jsx";
+import Information from "./components/Information/Information.jsx";
+import Form from "./components/Form/Form.jsx";
 
 function App() {
 
@@ -18,9 +21,12 @@ function App() {
   return (
     <>
      < Hero/>
-     < CountDate targetDate="2026-08-15T00:00:00"/>
+     < CountDate targetDate="2026-08-15T16:00:00"/>
      < Welcome/>
      < Ceremony/>
+     < Banquet/>
+     < Information/>
+     < Form/>
     </>
   )
 }

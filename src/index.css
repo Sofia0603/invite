@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Actay";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
     font-display: swap;
     src: url("/fonts/ActayCondensed-Thin.otf") format("opentype");
 }
@@ -34,11 +34,11 @@
     src: url("/fonts/Merriweathern.ttf") format("truetype");
 }
 @font-face {
-    font-family: "FreakShow";
+    font-family: "Cormorant";
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url("/fonts/Freak-Show.ttf") format("truetype");
+    src: url("/fonts/Cormorant.ttf") format("truetype");
 }
 
 @import "tailwindcss";
@@ -51,7 +51,7 @@
     --font-cafeparis: "CafeParis", sans-serif;
     --font-mirra: "Mirra", sans-serif;
     --font-merriweather: "Merriweather", sans-serif;
-    --font-freakshow: "FreakShow", sans-serif;
+    --font-cormorant: "Cormorant", sans-serif;
 
     --color-primary: #820F1C;
     --color-primary-dark: #62020D;
