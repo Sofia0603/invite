@@ -6,7 +6,7 @@ function Welcome() {
         Мы рады сообщить вам, что <span className="text-primary-dark">15.08.2026 </span>состоится самое главное торжество в нашей жизни – <span className="text-primary-dark">день нашей свадьбы!</span> Приглашаем вас разделить с нами радость этого незабываемого дня
       </p>
       <img
-        src="/images/rings-small.svg"
+        src="/invite/images/rings-small.svg"
         alt=""
       />
 

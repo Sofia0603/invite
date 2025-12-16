@@ -8,6 +8,7 @@ import Ceremony from "./components/Ceremony/Ceremony.jsx";
 import Banquet from "./components/Banquet/Banquet.jsx";
 import Information from "./components/Information/Information.jsx";
 import Form from "./components/Form/Form.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
      < Banquet/>
      < Information/>
      < Form/>
+     < Footer/>
     </>
   )
 }

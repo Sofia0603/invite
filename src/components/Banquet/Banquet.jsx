@@ -17,14 +17,14 @@ function Banquet () {
         <span>(City Center)</span>
       </p>
 
-      <img src="/images/map2.svg" alt="" className="justify-center mb-5"/>
+      <img src="/invite/images/map2.svg" alt="" className="justify-center mb-5"/>
 
       <a target="_blank" href="https://yandex.ru/maps/-/CLwIe2PW"
          className="font-cormorant bg-primary-dark py-2 px-5 rounded-3xl uppercase text-white text-[16px] block mb-4"
       >посмотреть на карте</a>
 
       <img
-        src="/images/rings-small.svg"
+        src="/invite/images/rings-small.svg"
         alt=""
       />
 
