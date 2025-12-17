@@ -8,7 +8,7 @@ function Information(){
         </p>
 
         <img
-          src="/invite/images/rings-small.svg"
+          src="/invite/client/images/rings-small.svg"
           alt=""
         />
       </div>
@@ -33,7 +33,7 @@ function Information(){
         </div>
 
         <img
-          src="/invite/images/rings-small.svg"
+          src="/invite/client/images/rings-small.svg"
           alt=""
         />
       </div>
@@ -45,7 +45,7 @@ function Information(){
         </p>
 
         <img
-          src="/invite/images/rings-small.svg"
+          src="/invite/client/images/rings-small.svg"
           alt=""
         />
       </div>
@@ -58,7 +58,7 @@ function Information(){
         </p>
 
         <img
-          src="/invite/images/rings-small.svg"
+          src="/invite/client/images/rings-small.svg"
           alt=""
         />
 
@@ -74,7 +74,7 @@ function Information(){
         </p>
 
         <img
-          src="/invite/images/rings-small.svg"
+          src="/invite/client/images/rings-small.svg"
           alt=""
         />
 
@@ -91,7 +91,7 @@ function Information(){
         </p>
 
         <img
-          src="/invite/images/rings-small.svg"
+          src="/invite/client/images/rings-small.svg"
           alt=""
         />
 

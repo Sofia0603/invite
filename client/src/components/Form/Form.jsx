@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect} from "react";
+import {trySubmit} from "../../utils/formLocalStorage.js";
 
 
 function Form(){
@@ -13,22 +14,33 @@ function Form(){
   const [showSubmitError, setShowSubmitError] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Очистка эффекта на размонтировании
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showModal]);
+
 
   const nameInputRef = useRef(null); // <--- ref для инпута
 
 
-  const isNameValid = fullName.trim().length > 0;
-
-
-
   const blockIfNoName = (callback) => {
-    if (!fullName.trim()) {
+    const words = fullName.trim().split(/\s+/);
+
+    if (words.length < 2) { // проверка на минимум 2 слова
       setShowNameError(true);
 
       if (nameInputRef.current) {
         nameInputRef.current.scrollIntoView({
-          behavior: "smooth", // плавно
-          block: "center",    // центрируем элемент по вертикали
+          behavior: "smooth",
+          block: "center",
         });
 
         setTimeout(() => {
@@ -45,7 +57,8 @@ function Form(){
 
 
 
-  const showTransferOptions = presence === "full";
+
+  const showTransferOptions = presence === "На церемонии в ЗАГСе и на банкете";
 
   const handlePresenceChange = (value) => {
     setPresence(value);
@@ -76,11 +89,12 @@ function Form(){
     "предпочитаю рыбу"
   ];
 
-
+  const isNameValid = fullName.trim().split(/\s+/).length >= 2;
+  console.log(isNameValid);
   const isFormValid =
     isNameValid &&
     presence &&
-    (presence !== "full" || transfer) &&
+    (presence !== "На церемонии в ЗАГСе и на банкете" || transfer) &&
     kitchenPreference &&
     alcoholPreferences.length > 0;
 
@@ -97,6 +111,7 @@ function Form(){
 
 
   return (
+    <>
     <form data-aos="fade-up">
 
       <div className="relative">
@@ -143,13 +158,13 @@ function Form(){
               type="radio"
               name="presence-format"
               className="hidden"
-              checked={presence === "на церемонии в ЗАГСе и на банкете"}
-              onChange={() => blockIfNoName(() => handlePresenceChange("full"))}
+              checked={presence === "На церемонии в ЗАГСе и на банкете"}
+              onChange={() => blockIfNoName(() => handlePresenceChange("На церемонии в ЗАГСе и на банкете"))}
             />
             <span className="w-[14px] h-[14px] rounded-full border border-primary-dark bg-transparent flex items-center justify-center">
-            <span className={`w-[8px] h-[8px] rounded-full bg-primary-dark transition-transform ${presence === "full" ? "scale-100" : "scale-0"}`} />
+            <span className={`w-[8px] h-[8px] rounded-full bg-primary-dark transition-transform ${presence === "На церемонии в ЗАГСе и на банкете" ? "scale-100" : "scale-0"}`} />
           </span>
-            <span className="font-actay">на церемонии в ЗАГСе и на банкете</span>
+            <span className="font-actay">На церемонии в ЗАГСе и на банкете</span>
           </label>
 
           <label className="group flex items-center gap-2 cursor-pointer">
@@ -157,14 +172,14 @@ function Form(){
               type="radio"
               name="presence-format"
               className="hidden"
-              checked={presence === "только на банкете"}
-              onChange={() => blockIfNoName(() => handlePresenceChange("banquet"))}
+              checked={presence === "Только на банкете"}
+              onChange={() => blockIfNoName(() => handlePresenceChange("Только на банкете"))}
 
             />
             <span className="w-[14px] h-[14px] rounded-full border border-primary-dark bg-transparent flex items-center justify-center">
-            <span className={`w-[8px] h-[8px] rounded-full bg-primary-dark transition-transform ${presence === "banquet" ? "scale-100" : "scale-0"}`} />
+            <span className={`w-[8px] h-[8px] rounded-full bg-primary-dark transition-transform ${presence === "Только на банкете" ? "scale-100" : "scale-0"}`} />
           </span>
-            <span className="font-actay">только на банкете</span>
+            <span className="font-actay">Только на банкете</span>
           </label>
         </div>
 
@@ -296,25 +311,65 @@ function Form(){
 
         <button
           type="button"
-          onClick={() => {
+          className="font-cormorant bg-primary-dark py-2 px-5 rounded-3xl uppercase text-white mt-10"
+          onClick={async () => {
             if (!isFormValid) {
               setShowSubmitError(true);
               setTimeout(() => setShowSubmitError(false), 4000);
               return;
             }
-            setShowModal(true);
-            console.log(formData);
-            // 👉 здесь отправка данных в backend → telegram bot
+
+            if (!trySubmit(fullName)) {
+              alert("Вы уже отправили заполненную форму");
+              return;
+            }
+
+            try {
+              const response = await fetch("http://localhost:5000/send-form", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+              });
+
+              const data = await response.json();
+
+              if (response.ok) {
+                setShowModal(true);
+                console.log("Форма отправлена:", data);
+              } else {
+                alert("Ошибка при отправке формы: " + data.message);
+              }
+            } catch (error) {
+              console.error("Ошибка запроса:", error);
+              alert("Не удалось отправить форму. Попробуйте позже.");
+            }
           }}
-          className="font-cormorant bg-primary-dark py-2 px-5 rounded-3xl uppercase text-white mt-10"
         >
           подтвердить присутствие
         </button>
+
+
+
       </div>
 
+
+      <img
+        src="/invite/client/images/rings-small.svg"
+        alt=""
+        data-aos="fade-up"
+        className="max-w-[50px] mx-auto mt-2"
+      />
+
+    </form>
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-primary-dark rounded-xl text-center max-w-[290px] w-full animate-fade-in">
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50 bg-black/50"
+          onClick={() => setShowModal(false)} // клик по фону закрывает модалку
+        >
+          <div
+            className="bg-primary-dark rounded-xl text-center max-w-[290px] w-full animate-fade-in relative"
+            onClick={(e) => e.stopPropagation()} // предотвращаем закрытие при клике внутри окна
+          >
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-2 right-2 text-xl text-white"
@@ -332,14 +387,7 @@ function Form(){
       )}
 
 
-      <img
-        src="/invite/images/rings-small.svg"
-        alt=""
-        data-aos="fade-up"
-        className="max-w-[50px] mx-auto mt-2"
-      />
-
-    </form>
+    </>
   )
 }
 

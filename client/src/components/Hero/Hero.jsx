@@ -4,7 +4,7 @@ function Hero(){
   return (
    <section className=" mb-8">
      <div className="h-[425px]">
-       <img src="/invite/images/rings.gif" alt="rings" className="w-full mx-auto" />
+       <img src="/invite/client/images/rings.gif" alt="rings" className="w-full mx-auto" />
 
        {/*<img src="/invite/images/rings.svg" alt="rings" className="flex justify-center w-full mb-5 max-w-[290px] mx-auto" />*/}
      </div>
