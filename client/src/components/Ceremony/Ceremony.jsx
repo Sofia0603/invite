@@ -8,7 +8,7 @@ function Ceremony() {
         <span>БУЛЬВАР СВОБОДЫ, 5</span>
       </p>
 
-      <img src="/invite/client/images/map1.svg" alt="" className="justify-center mb-5" data-aos="fade-up"/>
+      <img src="/images/map1.svg" alt="" className="justify-center mb-5" data-aos="fade-up"/>
 
       <a target="_blank" href="https://yandex.ru/maps/-/CLwIe2PW"
          className="font-cormorant bg-primary-dark py-2 px-5 rounded-3xl uppercase text-white text-[16px] block mb-4"
@@ -34,7 +34,7 @@ function Ceremony() {
       </p>
 
       <img
-        src="/invite/client/images/rings-small.svg"
+        src="/images/rings-small.svg"
         alt=""
         data-aos="fade-up"
       />

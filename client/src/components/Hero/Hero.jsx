@@ -4,9 +4,9 @@ function Hero(){
   return (
    <section className=" mb-8">
      <div className="h-[425px]">
-       <img src="/invite/client/images/rings.gif" alt="rings" className="w-full mx-auto" />
+       <img src="/images/rings.gif" alt="rings" className="w-full mx-auto" />
 
-       {/*<img src="/invite/images/rings.svg" alt="rings" className="flex justify-center w-full mb-5 max-w-[290px] mx-auto" />*/}
+       {/*<img src=" /images/rings.svg" alt="rings" className="flex justify-center w-full mb-5 max-w-[290px] mx-auto" />*/}
      </div>
      <div className="font-ballet text-[95px] leading-none text-primary-dark mb-6">15/08/26</div>
      <h1 className="font-cafeparis text-[54px] text-primary-dark flex flex-col justify-between leading-none gap-1">

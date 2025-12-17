@@ -325,7 +325,7 @@ function Form(){
             }
 
             try {
-              const response = await fetch("http://localhost:5000/send-form", {
+              const response = await fetch("/send-form", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
@@ -354,7 +354,7 @@ function Form(){
 
 
       <img
-        src="/invite/client/images/rings-small.svg"
+        src="/images/rings-small.svg"
         alt=""
         data-aos="fade-up"
         className="max-w-[50px] mx-auto mt-2"

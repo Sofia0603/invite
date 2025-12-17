@@ -2,7 +2,7 @@
   "name": "invite",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://sofia0603.github.io/invite",
+  "homepage": "/",
   "type": "module",
   "scripts": {
     "dev": "vite",
