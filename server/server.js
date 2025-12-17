@@ -12,39 +12,43 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/send-form", async (req, res) => {
-  const { fullName, presence, transfer, kitchenPreference, alcoholPreferences, allergy } = req.body;
+  const {
+    fullName,
+    presence,
+    transfer,
+    kitchenPreference,
+    alcoholPreferences,
+    allergy
+  } = req.body;
 
   if (!fullName || !presence) {
     return res.status(400).json({ message: "Invalid data" });
   }
 
   const message = `
-    *Новая заявка с сайта:*
-    
-    Имя и фамилия:
-    ${fullName}
-    
-    Формат присутствия:
-    ${presence}
-    
-    Трансфер:
-    ${transfer || "-"}
-    
-    Предпочтения по кухне:
-    ${kitchenPreference}
-    
-    Алкоголь:
-    ${alcoholPreferences.join(", ")}
-    
-    Аллергия:
-    ${allergy || "-"}
-    `;
+Новая заявка с сайта:
 
+Имя и фамилия:
+${fullName}
 
+Формат присутствия:
+${presence}
+
+Трансфер:
+${transfer || "-"}
+
+Предпочтения по кухне:
+${kitchenPreference}
+
+Алкоголь:
+${alcoholPreferences.join(", ")}
+
+Аллергия:
+${allergy || "-"}
+`;
 
   try {
-    const url = `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`;
-    await fetch(url, {
+    await fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -53,13 +57,13 @@ app.post("/send-form", async (req, res) => {
       }),
     });
 
-    res.json({ message: "Form sent successfully" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Failed to send form" });
+    res.json({ message: "OK" });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ message: "Telegram error" });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log("API running on port", PORT);
 });
