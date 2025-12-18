@@ -2,7 +2,7 @@
 
 function Hero(){
   return (
-   <section className="px-3">
+   <section className="px-3 mb-10">
      <div className="h-[380px]">
        <img src="/images/rings.gif" alt="rings" className="w-full mx-auto" />
 
