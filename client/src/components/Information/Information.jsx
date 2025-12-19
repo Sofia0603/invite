@@ -4,7 +4,7 @@ function Information(){
       <div className="flex justify-center flex-col items-center" data-aos="fade-up">
         <h2 className="font-mirra text-[25px] mb-5">МЕНЮ</h2>
         <p className="font-actay text-[16px] max-w-[363px] mx-auto flex flex-col justify-center items-center leading-5 mb-5">
-          Меню разнообразно, поэтому сообщите нам заранее, есть ли у вас какие-либо предпочтения или диетические ограничения После подтверждения присутствия, вы сможете пройти опрос о своих предпочтениях в еде и напитках
+          Меню разнообразно, поэтому сообщите нам заранее, есть ли у вас какие-либо предпочтения или диетические ограничения. После подтверждения присутствия, вы сможете пройти опрос о своих предпочтениях в еде и напитках
         </p>
 
         <img
@@ -15,7 +15,7 @@ function Information(){
       <div className="flex justify-center flex-col items-center" data-aos="fade-up">
         <h2 className="font-mirra text-[25px] mb-5">ВАШИ НАРЯДЫ</h2>
         <p className="font-actay text-[16px] max-w-[363px] mx-auto flex flex-col justify-center items-center leading-5 mb-5">
-          Мы будем благодарны, если при выборе нарядов на наше торжество вы придержитесь пастельных/нейтральных тонов Просим воздержаться от белых, кислотных и ярких элементов
+          Мы будем благодарны, если при выборе нарядов на наше торжество вы придержитесь пастельных/нейтральных тонов. Просим воздержаться от белых, кислотных и ярких элементов.
           Пример предпочитаемых оттенков нарядов:
         </p>
 
@@ -53,7 +53,7 @@ function Information(){
       <div className="flex justify-center flex-col items-center" data-aos="fade-up">
 
         <p className="font-actay text-[16px] max-w-[363px] mx-auto flex flex-col justify-center items-center leading-5 mb-2">
-          Будем благодарны, если вы воздержитесь от криков "Горько" на празднике
+          Будем благодарны, если вы воздержитесь от криков "Горько" на празднике.
           Ведь поцелуй – это знак выражения чувств,  он не может быть по заказу
         </p>
 
@@ -69,7 +69,7 @@ function Information(){
         <p className="font-actay text-[16px] max-w-[363px] mx-auto flex flex-col justify-center items-center leading-5 mb-2">
           Просим вас обратить внимание,
           что формат мероприятия не предполагает
-          детской площадки и аниматоров. Пожалуйста, позаботьтесь о том,
+          детской площадки и аниматоров. Пожалуйста, позаботьтесь о том,
           чтобы провести этот вечер без детей
         </p>
 
@@ -100,7 +100,7 @@ function Information(){
       <div className="flex justify-center flex-col items-center" data-aos="fade-up">
         <h2 className="font-mirra text-[25px] mb-2">ПОДТВЕРЖДЕНИЕ</h2>
         <p className="font-actay text-[16px] max-w-[363px] mx-auto leading-5 mb-2">
-          Пожалуйста, пройдите опрос и подтвердите присутствие до <span className="text-primary-dark">01.07.2026 </span><br/>
+          Пожалуйста, пройдите опрос и подтвердите присутствие до <span className="text-primary-dark">01.07.2026. </span><br/>
           Будем благодарны, если сделаете это заблаговременно
         </p>
 
