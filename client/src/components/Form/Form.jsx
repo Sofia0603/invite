@@ -13,6 +13,9 @@ function Form(){
   const [showNameError, setShowNameError] = useState(false);
   const [showSubmitError, setShowSubmitError] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+
 
   useEffect(() => {
     if (showModal) {
@@ -289,7 +292,7 @@ function Form(){
       </div>
 
 
-      <div className="relative">
+      <div className="relative flex justify-center">
         {showSubmitError && (
           <div
             className="absolute -top-[25px] left-1/2 -translate-x-1/2
@@ -311,7 +314,10 @@ function Form(){
 
         <button
           type="button"
-          className="font-cormorant bg-primary-dark py-2 px-5 rounded-3xl uppercase text-white mt-10"
+          disabled={isSubmitting}
+          className={`flex items-center justify-center gap-2 font-cormorant bg-primary-dark py-2 px-5 rounded-3xl uppercase text-white mt-10 transition-all ${
+            isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:bg-opacity-90"
+          }`}
           onClick={async () => {
             if (!isFormValid) {
               setShowSubmitError(true);
@@ -323,6 +329,8 @@ function Form(){
               alert("Вы уже отправили заполненную форму");
               return;
             }
+
+            setIsSubmitting(true);
 
             try {
               const response = await fetch("/send-form", {
@@ -342,12 +350,23 @@ function Form(){
             } catch (error) {
               console.error("Ошибка запроса:", error);
               alert("Не удалось отправить форму. Попробуйте позже.");
+            } finally {
+              setIsSubmitting(false);
             }
           }}
         >
-          подтвердить присутствие
+          {isSubmitting ? (
+            <>
+              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Отправка...
+            </>
+          ) : (
+            "подтвердить присутствие"
+          )}
         </button>
-
 
 
       </div>
