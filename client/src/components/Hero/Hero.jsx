@@ -3,7 +3,7 @@
 function Hero(){
   return (
    <section className="px-3 mb-10">
-     <div className="h-[380px]">
+     <div className="h-[270px]">
        <img src="/images/rings.gif" alt="rings" className="w-full mx-auto" />
 
        {/*<img src=" /images/rings.svg" alt="rings" className="flex justify-center w-full mb-5 max-w-[290px] mx-auto" />*/}

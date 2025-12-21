@@ -396,12 +396,12 @@ function Form(){
               ✕
             </button>
 
-            <p className="font-cafeparis text-xl text-white mt-10 mb-2">
+            <p className="font-cafeparis text-xl text-white mt-8 mb-2">
               СПАСИБО! <br />
               МЫ ПОЛУЧИЛИ ВАШЕ <br />
               ПОДТВЕРЖДЕНИЕ И ОТВЕТЫ
             </p>
-            <p className="font-actay text-xs text-center mb-3 text-white" >
+            <p className="font-actay text-xs text-center mb-8 text-white" >
               В СЛУЧАЕ, ЕСЛИ ВАМ ПОТРЕБУЕТСЯ СКОРРЕКТИРОВАТЬ ОТВЕТЫ, ПОЖАЛУЙСТА, НАПИШИТЕ ОБ ЭТОМ ЖЕНИХУ ИЛИ НЕВЕСТЕ
             </p>
           </div>
