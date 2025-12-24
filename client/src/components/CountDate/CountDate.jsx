@@ -32,7 +32,7 @@ function CountDate({ targetDate }){
 
 
   return (
-    <section className="font-cafeparis bg-bg-pink-light flex justify-around py-2 mb-[35px]" >
+    <section className="font-cafeparis bg-bg-pink-light flex justify-around py-2 mb-5" >
 
       <div className="flex flex-col items-center justify-center ">
         <div className="text-[32px] leading-none">

@@ -1,9 +1,9 @@
 function Banquet () {
   return (
     <section className="flex flex-col items-center justify-center " data-aos="fade-up">
-      <h2 className="font-mirra text-[25px] mb-2">БАНКЕТ</h2>
+      <h2 className="font-mirra text-[40px]">БАНКЕТ</h2>
 
-      <p className="font-actay text-[16px] max-w-[363px] mx-auto flex flex-col justify-center items-center ">
+      <p className="font-actay-regular text-[16px] max-w-[363px] mx-auto flex flex-col justify-center items-center ">
         После свадебной церемонии
         приглашаем вас продолжить торжество
         в банкетном зале  «Облака», ресторан «VERANDA»
@@ -12,7 +12,7 @@ function Banquet () {
         17:00
       </span>
 
-      <p className="font-actay text-[16px] max-w-[363px] mx-auto mb-3 flex flex-col justify-center items-center uppercase">
+      <p className="font-actay-regular text-[16px] max-w-[363px] mx-auto mb-3 flex flex-col justify-center items-center leading-none">
         <span>Проспект Ленина, 43</span>
         <span>(City Center)</span>
       </p>
@@ -20,7 +20,7 @@ function Banquet () {
       <img src="/images/map2.svg" alt="" className="justify-center mb-5"/>
 
       <a target="_blank" href="https://yandex.ru/maps/973/surgut/house/prospekt_lenina_43/Y0oYdQ9jQEQCQFhrfX50dXRiZw==/?ll=73.383915%2C61.254814&z=17"
-         className="font-cormorant bg-primary-dark py-2 px-5 rounded-3xl uppercase text-white text-[16px] block mb-4"
+         className="font-cormorant bg-primary-dark py-2 px-5 rounded-xl uppercase text-white text-[16px] block mb-4"
       >посмотреть на карте</a>
 
       <img

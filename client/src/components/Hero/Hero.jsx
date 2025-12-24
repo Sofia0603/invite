@@ -2,14 +2,14 @@
 
 function Hero(){
   return (
-   <section className="px-3 mb-10">
-     <div className="h-[270px]">
+   <section className="mb-10">
+     <div className="h-[250px]">
        <img src="/images/rings.gif" alt="rings" className="w-full mx-auto" />
 
        {/*<img src=" /images/rings.svg" alt="rings" className="flex justify-center w-full mb-5 max-w-[290px] mx-auto" />*/}
      </div>
-     <div className="font-ballet text-[95px] leading-none text-primary-dark mb-6">15/08/26</div>
-     <h1 className="font-cafeparis text-[54px] text-primary-dark flex flex-col justify-between leading-none gap-1">
+     <div className="font-ballet text-[95px] leading-none text-primary-dark mb-6 px-3">15/08/26</div>
+     <h1 className="font-cafeparis text-[54px] text-primary-dark flex flex-col justify-between leading-none gap-1 px-3">
       <span
         className="self-start"
         data-aos="fade-right"

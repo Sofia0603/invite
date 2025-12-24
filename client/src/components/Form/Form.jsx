@@ -144,7 +144,7 @@ function Form(){
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           ref={nameInputRef} // <--- здесь
-          className="font-actay pt-2 pb-1 px-2 text-primary-dark border border-primary-dark rounded-lg text-center w-[226px]"
+          className="font-actay-regular pt-2 pb-1 px-2 text-primary-dark border border-primary-dark rounded-lg text-center w-[226px]"
         />
 
       </div>
@@ -154,7 +154,7 @@ function Form(){
       <div className="bg-bg-extra-light relative rounded-xl mx-3 p-3 text-left mt-4">
 
         <div className="mb-3">
-          <h3 className="font-mirra text-xl mb-2 ">Формат вашего присутствия</h3>
+          <h3 className="font-mirra text-2xl mb-2 ">Формат вашего присутствия</h3>
 
           <label className="group flex items-center gap-2 cursor-pointer">
             <input
@@ -167,7 +167,7 @@ function Form(){
             <span className="w-[14px] h-[14px] rounded-full border border-primary-dark bg-transparent flex items-center justify-center">
             <span className={`w-[8px] h-[8px] rounded-full bg-primary-dark transition-transform ${presence === "На церемонии в ЗАГСе и на банкете" ? "scale-100" : "scale-0"}`} />
           </span>
-            <span className="font-actay">На церемонии в ЗАГСе и на банкете</span>
+            <span className="font-actay-regular text-sm">На церемонии в ЗАГСе и на банкете</span>
           </label>
 
           <label className="group flex items-center gap-2 cursor-pointer">
@@ -182,7 +182,7 @@ function Form(){
             <span className="w-[14px] h-[14px] rounded-full border border-primary-dark bg-transparent flex items-center justify-center">
             <span className={`w-[8px] h-[8px] rounded-full bg-primary-dark transition-transform ${presence === "Только на банкете" ? "scale-100" : "scale-0"}`} />
           </span>
-            <span className="font-actay">Только на банкете</span>
+            <span className="font-actay-regular text-sm">Только на банкете</span>
           </label>
         </div>
 
@@ -233,7 +233,7 @@ function Form(){
 
         {/* Предпочтения по кухне */}
         <div className="mt-4 mb-2">
-          <h3 className="font-mirra text-xl mb-2">Предпочтения по кухне</h3>
+          <h3 className="font-mirra text-2xl mb-2">Предпочтения по кухне</h3>
           {kitchenOptions.map((option) => (
             <label key={option} className="flex items-center gap-2 cursor-pointer ">
               <input
@@ -247,7 +247,7 @@ function Form(){
               <span className="w-[14px] h-[14px] rounded-full border border-primary-dark flex items-center justify-center">
                 <span className={`w-[8px] h-[8px] rounded-full bg-primary-dark transition-transform ${kitchenPreference === option ? "scale-100" : "scale-0"}`} />
               </span>
-              <span className="font-actay">{option}</span>
+              <span className="font-actay-regular text-sm">{option}</span>
             </label>
           ))}
         </div>
@@ -255,7 +255,7 @@ function Form(){
 
         {/* Предпочтения по алкоголю (кастомные прозрачные чекбоксы) */}
         <div className="mt-6">
-          <h3 className="font-mirra text-xl mb-3">Предпочтения по алкоголю</h3>
+          <h3 className="font-mirra text-2xl mb-3">Предпочтения по алкоголю</h3>
 
           {alcoholOptions.map((option) => (
             <label key={option} className="flex items-center gap-2 cursor-pointer mb-2 relative">
@@ -270,16 +270,16 @@ function Form(){
                   </svg>
                 )}
               </span>
-              <span className="font-actay">{option}</span>
+              <span className="font-actay-regular text-sm">{option}</span>
             </label>
           ))}
         </div>
 
 
         <div className="mt-4 mb-2">
-          <h3 className="font-mirra text-xl mb-2">Есть ли у вас пищевая аллергия?</h3>
+          <h3 className="font-mirra text-2xl mb-2">Есть ли у вас пищевая аллергия?</h3>
             <label className="flex items-center gap-2 cursor-pointer ">
-              <input type="text" name="allergy" className="font-actay text-[15px] pt-1 pb-0 px-2 leading-none text-primary-dark border border-primary-dark rounded-lg w-[194px]"
+              <input type="text" name="allergy" className="font-actay-regular text-[15px] pt-1 pb-0 px-2 leading-none text-primary-dark border border-primary-dark rounded-lg w-[194px]"
                      placeholder="Ваш ответ.."
                      onChange={(e) => setAllergy(e.target.value)}
 
@@ -315,7 +315,7 @@ function Form(){
         <button
           type="button"
           disabled={isSubmitting}
-          className={`flex items-center justify-center gap-2 font-cormorant bg-primary-dark py-2 px-5 rounded-3xl uppercase text-white mt-10 transition-all ${
+          className={`flex items-center justify-center gap-2 text-xl font-cormorant bg-primary-dark py-1 px-5 rounded-3xl font-normal uppercase text-white mt-5 transition-all max-w-[215px] ${
             isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:bg-opacity-90"
           }`}
           onClick={async () => {
@@ -401,7 +401,7 @@ function Form(){
               МЫ ПОЛУЧИЛИ ВАШЕ <br />
               ПОДТВЕРЖДЕНИЕ И ОТВЕТЫ
             </p>
-            <p className="font-actay text-xs text-center mb-8 text-white" >
+            <p className="font-actay-regular text-xs text-center mb-8 text-white" >
               В СЛУЧАЕ, ЕСЛИ ВАМ ПОТРЕБУЕТСЯ СКОРРЕКТИРОВАТЬ ОТВЕТЫ, ПОЖАЛУЙСТА, НАПИШИТЕ ОБ ЭТОМ ЖЕНИХУ ИЛИ НЕВЕСТЕ
             </p>
           </div>

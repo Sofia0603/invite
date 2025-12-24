@@ -6,6 +6,13 @@
     src: url("/fonts/ActayCondensed-Thin.otf") format("opentype");
 }
 @font-face {
+    font-family: "ActayRegular";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Actay-Regular.otf") format("opentype");
+}
+@font-face {
     font-family: "Ballet";
     font-style: normal;
     font-weight: 250;
@@ -47,6 +54,7 @@
 
 @theme {
     --font-actay: "Actay", sans-serif;
+    --font-actay-regular: "ActayRegular", sans-serif;
     --font-ballet: "Ballet", sans-serif;
     --font-cafeparis: "CafeParis", sans-serif;
     --font-mirra: "Mirra", sans-serif;
